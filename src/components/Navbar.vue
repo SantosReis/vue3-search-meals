@@ -25,6 +25,3 @@
     </div>
   </header>
 </template>
-<script setup>
-console.log('Navbar.vue');
-</script>
