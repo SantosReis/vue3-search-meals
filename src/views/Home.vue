@@ -20,11 +20,14 @@
 </template>
 
 <script setup>
-// import { computed } from 'vuex/types/helpers.js';
-// import { computed } from '@vue/reactivity';
-import { computed } from 'vue';
+import { computed, onMounted } from 'vue';
 import store from './../store';
+import axiosClient from '../axiosClient';
 
-const meals = computed(() => store.state.meals);
 const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+onMounted(async () => {
+  const response = await axiosClient.get('/list.php?i=list');
+  console.log(response.data);
+});
 </script>
