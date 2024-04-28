@@ -1,15 +1,14 @@
 <template>
-  <router-view />
+  <div class="bg-gray-100 h-full">
+    <header class="bg-white shadow h-16"></header>
+    <main>
+      <router-view />
+    </main>
+  </div>
 </template>
 
-<script setup>
+<script setup></script>
 
-</script>
+<style setup></style>
 
-<style setup>
-
-</style>
-
-<style scoped>
-
-</style>
+<style scoped></style>
