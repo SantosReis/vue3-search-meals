@@ -31,6 +31,15 @@
           </template>
         </ul>
       </div>
+      <div class="mt-4">
+        <YouTubeButton :href="meal.strYoutube">Youtube</YouTubeButton>
+        <a
+          :href="meal.strSource"
+          target="_blank"
+          class="ml-3 px-3 py-2 rounded border-2 border-transparent text-indigo-600 hover:bg-indigo-600 hover:text-white transition-colors"
+          >View Original Source
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -39,6 +48,7 @@
 import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import axiosClient from '../axiosClient';
+import YouTubeButton from '../components/YouTubeButton.vue';
 
 const route = useRoute();
 const meal = ref({});

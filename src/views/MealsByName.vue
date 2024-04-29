@@ -31,12 +31,7 @@
           veritatis incidunt vero voluptatum.
         </p>
         <div class="flex items-center justify-between">
-          <a
-            :href="meal.strYoutube"
-            target="_blank"
-            class="px-3 py-2 rounded border-2 text-white border-orange-600 bg-orange-500 hover:bg-orange-600 transition-colors"
-            >Youtube</a
-          >
+          <YouTubeButton :href="meal.strYoutube" />
           <router-link
             to="/"
             class="ml-3 px-3 py-2 rounded border-2 border-transparent text-indigo-600 transition-colors"
@@ -54,6 +49,7 @@ import { computed } from '@vue/reactivity';
 import { onMounted, ref } from 'vue';
 import store from '../store';
 import { useRoute } from 'vue-router';
+import YouTubeButton from '../components/YouTubeButton.vue';
 
 const route = useRoute();
 const keyword = ref('');
