@@ -1,7 +1,20 @@
 <template>
-  <div>
-    SearchByIngredient
-    <pre>{{ ingredients }}</pre>
+  <div class="p-8">
+    <h1 class="text-4xl font-bold mb-4">Ingredients</h1>
+    <router-link
+      :to="{
+        name: 'byIngredient',
+        params: { ingredient: ingredient.idIngredient },
+      }"
+      v-for="ingredient of ingredients"
+      :key="ingredient.idIngredient"
+      class="block bg-white rounded p-3 mb-3"
+    >
+      <h3 class="text-2xl font-bold mb-2">
+        strIngredient{{ ingredient.strIngredient }}
+      </h3>
+      <div>strDescription{{ ingredient.strDescription }}</div>
+    </router-link>
   </div>
 </template>
 
@@ -14,7 +27,7 @@ const ingredients = ref([]);
 onMounted(() => {
   axiosClient.get('list.php?i=list').then(({ data }) => {
     // debugger;
-    ingredients.value = data;
+    ingredients.value = data.meals;
   });
 });
 </script>
