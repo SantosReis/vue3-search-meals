@@ -1,9 +1,9 @@
 <template>
-  <div class="flex p-8 flex-col items-center justify-center">
+  <div class="p-8 pb-0">
     <input
       type="text"
       v-model="keyword"
-      class="rounded border-2 border-gray-200 w-72"
+      class="rounded border-2 bg-white border-gray-200 w-full"
       placeholder="Search for Meals"
       @change="searchMeals"
     />
